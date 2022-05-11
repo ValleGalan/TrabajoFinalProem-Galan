@@ -1,0 +1,52 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/**
+    PALETA
+    https://colorhunt.co/palette/a85cf95534a54b7be56fdfdf
+    https://colorhunt.co/palette/06113cff8c32ddddddeeeeee
+    https://colorhunt.co/palette/005555069a8ea1e3d8f7ff93 
+*/
+
+:root {
+    --primary: #5534A5; 
+    --secundary: #A85CF9;
+    --ternary: #4B7BE5;
+    --cuarter: #6FDFDF;
+    --primary-container: #F8ECD1;
+    --secundary-container: #F2F2F2;
+    --ternary-container: #4C0027; /*bordo**/
+    --color-write: #ffffff;
+    --color-black: #000000;
+}
+.fondoIndex {
+    background-color: var(--primary);
+}
+.ColorPrincipal{
+  background-color: var(--primary);
+  color: var(--color-write)!important;
+}
+.inputColor{
+  background-color: var(--primary-container);
+  color: var(--color-black); 
+  border-radius: 25px;
+}
+.navbar-nav{/*header del navbar*/
+  background-color: var(--primary);
+  color: var(--color-write)!important;
+}
