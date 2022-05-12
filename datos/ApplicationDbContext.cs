@@ -12,9 +12,9 @@ namespace TrabajoFinalProem_GalanFlorencia.datos
         }
 
         // modelos que uso , despues se migraran a la BD
-        public DbSet<Cliente> Cliente { get; set; }
-        public DbSet<Factura> Factura { get; set; }
-        public DbSet<Pagos> Pagos { get; set; }
+        public DbSet<Cliente> Cliente { get; set; } = null!;
+        public DbSet<Factura> Factura { get; set; } = null!;
+        public DbSet<Pagos> Pagos { get; set; } = null!;
 
     }
 }

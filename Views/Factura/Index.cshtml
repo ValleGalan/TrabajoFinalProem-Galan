@@ -1,0 +1,62 @@
+﻿@model IEnumerable<TrabajoFinalProem_GalanFlorencia.Models.Factura>
+
+<!--TODO HTML-->
+<p class="text-center"> Mira las facturas</p>
+
+<!--NOTIFICACION-->
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Mensaje"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<!--FIN DE NOTIFICACION-->
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Lista de Facturas</h2>
+            </div>
+            <div class="col-sm-6">
+                <a asp-action="Crear" asp-controller="Factura" class="btn btn-primary"> Crear una nueva factura </a>
+            </div>
+        </div>
+         <div class="card-body">
+             <form method="post">  
+            @if (Model.Count() > 0)
+            {
+                <br /><br />
+                <table class="table table-striped border">
+                    <tr class="table-secundary">  <!--USO LA LISTA DE SU FUNCIONALIDAD-->
+                        <th>@Html.DisplayNameFor(m=>m.numero)</th>
+                        <th>@Html.DisplayNameFor(m=>m.FechaCreacion)</th>
+                        <th>Acciones</th>
+                    </tr>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m=>item.numero)</td>
+                            <td>@Html.DisplayFor(m=>item.FechaCreacion)</td>
+
+                            <td>
+                                <a asp-route-numero="@item.numero" asp-action="Editar"  class="btn-primary btn-success btn-sm"><i class="bi bi-pencil-square"></i></a>
+                                <a asp-route-numero="@item.numero" asp-action="Borrar"  class="btn-danger btn-sm"><i class="bi bi-trash"></i> </a>
+
+                                <!--
+                                  aspaction en este caso llama a los Get
+                                -->
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <p>No hay resgistros </p>
+            }
+            </form>
+        </div>
+    </div>
+    </div>
+

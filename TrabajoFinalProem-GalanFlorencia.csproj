@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Factura\" />
     <Folder Include="Views\Pagos\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>

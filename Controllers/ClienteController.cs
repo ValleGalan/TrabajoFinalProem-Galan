@@ -14,9 +14,11 @@ namespace TrabajoFinalProem_GalanFlorencia.Controllers
             _contexto = contexto;
         }
         [HttpGet]
-        public async Task<IActionResult> Index() //llama al index
+        public IActionResult Index()//async Task<IActionResult> Index()
         {
-            return View(await _contexto.Cliente.ToListAsync());
+            //listar por numero de factura
+            List<Factura> lista = _contexto.Factura.Include(c => c.numero).ToList();
+            return View(lista);// await _contexto.Cliente.ToListAsync()
         }
 
         [HttpGet] //mostrar el formulario
@@ -38,7 +40,7 @@ namespace TrabajoFinalProem_GalanFlorencia.Controllers
             return View();//_contexto.Cliente.ToListAsync()
         }
         [HttpGet] //EDITAR
-        public IActionResult Editar(int codigo)
+        public IActionResult Editar(int? codigo)
         {
             if(codigo == null)
             {
@@ -64,8 +66,8 @@ namespace TrabajoFinalProem_GalanFlorencia.Controllers
             }
             return View(cliente);//_contexto.Cliente.ToListAsync()
         }
-        [HttpGet] //EDITAR
-        public IActionResult Borrar(int codigo)
+        [HttpGet] 
+        public IActionResult Borrar(int? codigo)
         {
             if (codigo == null)
             {
@@ -92,7 +94,8 @@ namespace TrabajoFinalProem_GalanFlorencia.Controllers
             TempData["Mensaje"] = "El cliente se borro correctamente";
             return RedirectToAction("Index");
         }
-
+        
+        
 
 
 

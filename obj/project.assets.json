@@ -1865,11 +1865,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\INTEL\\source\\Personales\\TrabajoFinalProem-GalanFlorencia\\TrabajoFinalProem-GalanFlorencia.csproj",
+      "projectUniqueName": "C:\\Users\\INTEL\\source\\Personales\\TP FINAL PROEM\\TrabajoFinalProem-GalanFlorencia\\TrabajoFinalProem-GalanFlorencia.csproj",
       "projectName": "TrabajoFinalProem-GalanFlorencia",
-      "projectPath": "C:\\Users\\INTEL\\source\\Personales\\TrabajoFinalProem-GalanFlorencia\\TrabajoFinalProem-GalanFlorencia.csproj",
+      "projectPath": "C:\\Users\\INTEL\\source\\Personales\\TP FINAL PROEM\\TrabajoFinalProem-GalanFlorencia\\TrabajoFinalProem-GalanFlorencia.csproj",
       "packagesPath": "C:\\Users\\INTEL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\INTEL\\source\\Personales\\TrabajoFinalProem-GalanFlorencia\\obj\\",
+      "outputPath": "C:\\Users\\INTEL\\source\\Personales\\TP FINAL PROEM\\TrabajoFinalProem-GalanFlorencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\INTEL\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -25,22 +25,26 @@
         </div>
          <div class="card-body">
              <form method="post"> <!--Para que el post pueda borrar-->
-            @if (Model.Count() > 0)
+            @if (Model != null ) //Model.Count() > 0
             {
                 <br /><br />
                 <table class="table table-striped border">
-                    <tr class="table-secundary">  <!--USO LA LISTA DE SU FUNCIONALIDAD-->
+                    <tr class="table-secundary">  <!--USO LA LISTA DE SU FUNCIONALIDAD--> 
+                        <th>@Html.DisplayNameFor(m=>m.codigo)</th>
                         <th>@Html.DisplayNameFor(m=>m.nombre)</th>
                         <th>@Html.DisplayNameFor(m=>m.direccion)</th>
-                        <th>@Html.DisplayNameFor(m=>m.extraSaldo)</th>
+                        <th>@Html.DisplayNameFor(m=>m.extraSaldo)</th> 
+                      
                         <th>Acciones</th>
                     </tr>
                     @foreach(var item in Model)
                     {
                         <tr>
+                            <td>@Html.DisplayFor(m=>item.codigo)</td>
                             <td>@Html.DisplayFor(m=>item.nombre)</td>
                             <td>@Html.DisplayFor(m=>item.direccion)</td>
                             <td>@Html.DisplayFor(m=>item.extraSaldo)</td>
+                             
                             <td>
                                 <a asp-route-codigo="@item.codigo" asp-action="Editar"  class="btn-primary btn-success btn-sm"><i class="bi bi-pencil-square"></i></a>
                                 <a asp-route-codigo="@item.codigo" asp-action="Borrar"  class="btn-danger btn-sm"><i class="bi bi-trash"></i> </a>

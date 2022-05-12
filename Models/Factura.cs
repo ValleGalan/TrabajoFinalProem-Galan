@@ -6,35 +6,30 @@ namespace TrabajoFinalProem_GalanFlorencia.Models
     {
         [Key]
         [Required]
+        [Display(Name = "ID Factura")]
         public int numero { get; set; }
 
-        public int IDCliente { get; set; }
-
         [Display(Name = "Fecha creacion")]
-        public DateTime FechaCreacion { get; set; }
-        //vincular con el cliente
+        public DateTime? FechaCreacion { get; set; }
+
+        //vincular con el cliente 
         public Factura()
         {
-            this.Cliente = new HashSet<Cliente>();
+            Clientes = new HashSet<Cliente>();
         }
-        public int CodigoCliente { get; set; }
-       // public Cliente Cliente { get; set; }
-        public virtual ICollection<Cliente> Clientes { get; set;} 
-       
-        public int PagosId { get; set; }
-        public HashSet<Cliente> Cliente { get; private set; }
+        [Display(Name = "id Cliente")]
 
-        //para ITEMS
+        public virtual ICollection<Cliente> Clientes { get; set; }
+       // public int ClienteId { get; set; } //foranea
+        //vincular con pagos -Relacion uno a uno
+        [Display(Name = " Pagos")]
+        public int? PagosId { get; set; }
+        public virtual Pagos? PagosIdNavigation { get; set; }
 
-        // public virtual ICollection<Cliente> Items { get; set; }
-        /**
-                 codigo
-        desc
-        cantidad
-        precio
-    extra- cantidad de items dinamicos
 
-         */
+       // public Pagos Pagos { get; set; }
+        
+
 
     }
 }
